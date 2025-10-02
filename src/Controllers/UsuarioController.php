@@ -16,7 +16,7 @@ class UsuarioController {
 
             return ['status' => 'success', 'data' => $usuarios->toArray()];
         } catch (\Exception $e) {
-            $id = EasyLogger::newLog('error.log', $e->getMessage(), 'ERROR');
+            $id = EasyLogger::newLog('error', $e->getMessage(), 'ERROR');
             return ['status' => 'server_error', 'error_id' => $id];
         }
     }
