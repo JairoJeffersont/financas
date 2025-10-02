@@ -26,11 +26,18 @@ class UsuarioController {
 
 
     public static function buscarUsuario(string $valor, string $coluna = 'id'): array {
+
+        $colunasPermitidas = ['id', 'email', 'nome'];
+
+        if (!in_array($coluna, $colunasPermitidas)) {
+            return ['status' => 'bad_request', 'message' => 'Coluna de busca não permitida.'];
+        }
+
         try {
 
-            $usuario = UsuarioModel::where($coluna, $valor)->get();
+            $usuario = UsuarioModel::where($coluna, $valor)->first();
 
-            if ($usuario->isEmpty()) {
+            if (!$usuario) {
                 return ['status' => 'not_found'];
             }
 
