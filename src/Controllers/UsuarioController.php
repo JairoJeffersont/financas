@@ -13,7 +13,7 @@ class UsuarioController {
             if ($usuarios->isEmpty()) {
                 return ['status' => 'empty'];
             }
-
+            
             return ['status' => 'success', 'data' => $usuarios->toArray()];
         } catch (\Exception $e) {
             $id = Logger::newLog('error', $e->getMessage(), 'ERROR');

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff4c6054441336a62f1cf321ed53cbb5",
+    "content-hash": "7e2786c362ccbe4cc4fc80b02edcda7f",
     "packages": [
         {
             "name": "brick/math",
@@ -775,6 +775,43 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2025-09-29T18:49:19+00:00"
+        },
+        {
+            "name": "jairojeffsantos/file-uploader",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JairoJeffersont/file-uploader.git",
+                "reference": "cfac823aa5e62e8df344a7cf94047669246b9926"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JairoJeffersont/file-uploader/zipball/cfac823aa5e62e8df344a7cf94047669246b9926",
+                "reference": "cfac823aa5e62e8df344a7cf94047669246b9926",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EasyFileUploader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jairo Jefferson Teixeira Dos Santos",
+                    "email": "jairojeffersont@gmail.com"
+                }
+            ],
+            "description": "PHP library to handle file uploads with MIME type and size validation, automatic directory creation, and support for file deletion.",
+            "support": {
+                "issues": "https://github.com/JairoJeffersont/file-uploader/issues",
+                "source": "https://github.com/JairoJeffersont/file-uploader/tree/v1.0.0"
+            },
+            "time": "2025-10-02T15:06:12+00:00"
         },
         {
             "name": "laravel/serializable-closure",
