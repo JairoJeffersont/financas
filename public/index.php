@@ -6,16 +6,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Dotenv\Dotenv;
 
-// --- MINIFY START ---
-function minify_output($html) {
-    $html = preg_replace('/<!--(?!\[if).*?-->/s', '', $html);
-    $html = preg_replace('/\s+/', ' ', $html);
-    $html = preg_replace('/>\s+</', '><', $html);
-    return $html;
-}
-ob_start('minify_output');
-// --- MINIFY END ---
-
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
@@ -32,10 +22,5 @@ $capsule->addConnection([
 ]);
 
 $capsule->setAsGlobal();
+
 $capsule->bootEloquent();
-
-// Inclui o layout/base da aplicação
-include('../src/Views/base/baseLayout.php');
-
-// Envia saída minificada
-ob_end_flush();
