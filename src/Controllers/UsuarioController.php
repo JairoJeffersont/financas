@@ -68,5 +68,49 @@ class UsuarioController {
             return ['status' => 'server_error', 'error_id' => $id];
         }
     }
-    
+
+    public static function novoUsuario(array $dados): array {
+        try {
+
+            $usuario = UsuarioModel::where('email', $dados['email'])->first();
+
+            if ($usuario) {
+                return ['status' => 'duplicated'];
+            }
+
+            $usuario = UsuarioModel::create($dados);
+
+            return ['status' => 'success', 'data' => $usuario->toArray()];
+        } catch (\Exception $e) {
+            $idLog = Logger::newLog('error', $e->getMessage(), 'ERROR');
+            return ['status' => 'server_error', 'error_id' => $idLog];
+        }
+    }
+
+    public static function atualizarUsuario(int $id, array $dados): array {
+        try {
+            $usuario = UsuarioModel::find($id);
+
+            if (!$usuario) {
+                return ['status' => 'not_found'];
+            }
+
+            if (isset($dados['email'])) {
+                $emailExistente = UsuarioModel::where('email', $dados['email'])
+                    ->where('id', '<>', $id)
+                    ->first();
+
+                if ($emailExistente) {
+                    return ['status' => 'duplicated'];
+                }
+            }
+
+            $usuario->update($dados);
+
+            return ['status' => 'success', 'data' => $usuario->toArray()];
+        } catch (\Exception $e) {
+            $idLog = Logger::newLog('error', $e->getMessage(), 'ERROR');
+            return ['status' => 'server_error', 'error_id' => $idLog];
+        }
+    }
 }
