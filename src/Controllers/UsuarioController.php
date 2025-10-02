@@ -6,10 +6,12 @@ use Financas\Helpers\Logger;
 use Financas\Models\UsuarioModel;
 
 class UsuarioController {
-    public static function listarUsuarios(): array {
-        try {
 
-            $usuarios = UsuarioModel::all();
+    public static function listarUsuarios(int $itens = 10, int $pagina = 1): array {
+        try {
+            $skip = ($pagina - 1) * $itens;
+
+            $usuarios = UsuarioModel::skip($skip)->take($itens)->get();
 
             if ($usuarios->isEmpty()) {
                 return ['status' => 'empty'];
@@ -22,8 +24,10 @@ class UsuarioController {
         }
     }
 
+
     public static function buscarUsuario(string $valor, string $coluna = 'id'): array {
         try {
+
             $usuario = UsuarioModel::where($coluna, $valor)->get();
 
             if ($usuario->isEmpty()) {
@@ -39,6 +43,7 @@ class UsuarioController {
 
     public static function apagarUsuario(string $id): array {
         try {
+
             $usuario = UsuarioModel::find($id);
 
             if (!$usuario) {
@@ -46,11 +51,13 @@ class UsuarioController {
             }
 
             $usuario->delete();
-            return ['status' => 'deleted'];
+            return ['status' => 'success'];
         } catch (\Exception $e) {
+
             if (strpos($e->getMessage(), 'FOREIGN KEY') !== false) {
                 return ['status' => 'not_permitted'];
             }
+
             $id = Logger::newLog('error', $e->getMessage(), 'ERROR');
             return ['status' => 'server_error', 'error_id' => $id];
         }
