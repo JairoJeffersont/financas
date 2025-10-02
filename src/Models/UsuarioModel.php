@@ -14,7 +14,7 @@ class Usuario extends Model {
 
     public $incrementing = false;
 
-    protected $fillable = ['id', 'nome', 'telefone', 'email', 'token', 'ativo', 'foto'];
+    protected $fillable = ['id', 'nome', 'telefone', 'email', 'token', 'ativo', 'senha', 'foto'];
 
     protected $dates = ['created_at', 'updated_at'];
 
