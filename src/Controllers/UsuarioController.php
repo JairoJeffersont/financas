@@ -4,6 +4,7 @@ namespace Financas\Controllers;
 
 use Financas\Helpers\Logger;
 use Financas\Models\UsuarioModel;
+use Ramsey\Uuid\Uuid;
 
 class UsuarioController {
 
@@ -77,6 +78,9 @@ class UsuarioController {
             if ($usuario) {
                 return ['status' => 'duplicated'];
             }
+
+            $dados['id'] = Uuid::uuid4()->toString();
+            $dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
 
             $usuario = UsuarioModel::create($dados);
 

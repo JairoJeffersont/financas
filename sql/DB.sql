@@ -5,7 +5,6 @@ CREATE TABLE
         email VARCHAR(100) NOT NULL UNIQUE,
         senha VARCHAR(255) NOT NULL,
         telefone VARCHAR(20) NOT NULL,
-        foto TEXT DEFAULT NULL,
         token TEXT DEFAULT NULL,
         ativo BOOLEAN NOT NULL DEFAULT TRUE,
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
