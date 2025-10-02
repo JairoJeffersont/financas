@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e2786c362ccbe4cc4fc80b02edcda7f",
+    "content-hash": "c728e2edb25696b3abe40d8130805b4b",
     "packages": [
         {
             "name": "brick/math",
@@ -777,41 +777,78 @@
             "time": "2025-09-29T18:49:19+00:00"
         },
         {
-            "name": "jairojeffsantos/file-uploader",
+            "name": "jairojeffsantos/easy-file-uploader",
             "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/JairoJeffersont/file-uploader.git",
-                "reference": "cfac823aa5e62e8df344a7cf94047669246b9926"
+                "url": "https://github.com/JairoJeffersont/easy-file-uploader.git",
+                "reference": "1e0b11bad06cad2c6d61830f0431d35825d95742"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JairoJeffersont/file-uploader/zipball/cfac823aa5e62e8df344a7cf94047669246b9926",
-                "reference": "cfac823aa5e62e8df344a7cf94047669246b9926",
+                "url": "https://api.github.com/repos/JairoJeffersont/easy-file-uploader/zipball/1e0b11bad06cad2c6d61830f0431d35825d95742",
+                "reference": "1e0b11bad06cad2c6d61830f0431d35825d95742",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "EasyFileUploader\\": "src/"
+                    "Jairojeffsantos\\EasyFileUploader\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "mit"
             ],
             "authors": [
                 {
-                    "name": "Jairo Jefferson Teixeira Dos Santos",
+                    "name": "Jairo Santos",
                     "email": "jairojeffersont@gmail.com"
                 }
             ],
-            "description": "PHP library to handle file uploads with MIME type and size validation, automatic directory creation, and support for file deletion.",
+            "description": "PHP Library for uploading",
             "support": {
-                "issues": "https://github.com/JairoJeffersont/file-uploader/issues",
-                "source": "https://github.com/JairoJeffersont/file-uploader/tree/v1.0.0"
+                "issues": "https://github.com/JairoJeffersont/easy-file-uploader/issues",
+                "source": "https://github.com/JairoJeffersont/easy-file-uploader/tree/v1.0.0"
             },
-            "time": "2025-10-02T15:06:12+00:00"
+            "time": "2025-10-02T15:59:27+00:00"
+        },
+        {
+            "name": "jairojeffsantos/easy-logger",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JairoJeffersont/easy-logger.git",
+                "reference": "90c98f25c50e42ec62e00e47f0a9be95713efa4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JairoJeffersont/easy-logger/zipball/90c98f25c50e42ec62e00e47f0a9be95713efa4e",
+                "reference": "90c98f25c50e42ec62e00e47f0a9be95713efa4e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JairoJeffSantos\\EasyLogger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Jairo Santos",
+                    "email": "jairojeffersont@gmail.com"
+                }
+            ],
+            "description": "PHP library for logging",
+            "support": {
+                "issues": "https://github.com/JairoJeffersont/easy-logger/issues",
+                "source": "https://github.com/JairoJeffersont/easy-logger/tree/v1.0.0"
+            },
+            "time": "2025-10-02T15:46:49+00:00"
         },
         {
             "name": "laravel/serializable-closure",

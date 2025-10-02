@@ -3,7 +3,7 @@
 namespace App\Financas\Controllers;
 
 use App\Financas\Models\Usuario;
-use App\Financas\Helpers\Logger;
+use JairoJeffSantos\EasyLogger;
 
 class UsuarioController {
     public static function listarUsuarios(): array {
@@ -13,10 +13,10 @@ class UsuarioController {
             if ($usuarios->isEmpty()) {
                 return ['status' => 'empty'];
             }
-            
+
             return ['status' => 'success', 'data' => $usuarios->toArray()];
         } catch (\Exception $e) {
-            $id = Logger::newLog('error', $e->getMessage(), 'ERROR');
+            $id = EasyLogger::newLog('error.log', $e->getMessage(), 'ERROR');
             return ['status' => 'server_error', 'error_id' => $id];
         }
     }

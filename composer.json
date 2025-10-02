@@ -21,6 +21,7 @@
         "ramsey/uuid": "^4.9",
         "phpmailer/phpmailer": "^6.10",
         "phpoffice/phpspreadsheet": "^5.1",
-        "jairojeffsantos/file-uploader": "^1.0"
+        "jairojeffsantos/easy-logger": "^1.0",
+        "jairojeffsantos/easy-file-uploader": "^1.0"
     }
 }
