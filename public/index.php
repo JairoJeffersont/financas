@@ -26,5 +26,5 @@ $capsule->setAsGlobal();
 
 $capsule->bootEloquent();
 
-print_r(UsuarioController::listarUsuarios());
+print_r(UsuarioController::buscarUsuario('dasdsa'));
 
