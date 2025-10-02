@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Financas\Controllers;
+namespace Financas\Controllers;
 
-use App\Financas\Models\Usuario;
-use JairoJeffSantos\EasyLogger;
+use Financas\Helpers\Logger;
+use Financas\Models\UsuarioModel;
 
 class UsuarioController {
     public static function listarUsuarios(): array {
         try {
-            $usuarios = Usuario::all();
+            $usuarios = UsuarioModel::all();
 
             if ($usuarios->isEmpty()) {
                 return ['status' => 'empty'];
@@ -16,7 +16,7 @@ class UsuarioController {
 
             return ['status' => 'success', 'data' => $usuarios->toArray()];
         } catch (\Exception $e) {
-            $id = EasyLogger::newLog('error', $e->getMessage(), 'ERROR');
+            $id = Logger::newLog('error', $e->getMessage(), 'ERROR');
             return ['status' => 'server_error', 'error_id' => $id];
         }
     }

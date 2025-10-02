@@ -1,5 +1,6 @@
 <?php
 
+use Financas\Controllers\UsuarioController;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -25,4 +26,5 @@ $capsule->setAsGlobal();
 
 $capsule->bootEloquent();
 
-//include('../src/Views/base/baseLayout.php');
+print_r(UsuarioController::listarUsuarios());
+

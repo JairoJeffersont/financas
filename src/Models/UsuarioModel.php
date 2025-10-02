@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Financas\Models;
+namespace Financas\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model {
+class UsuarioModel extends Model {
 
     protected $table = 'usuario';
 
@@ -17,5 +17,4 @@ class Usuario extends Model {
     protected $fillable = ['id', 'nome', 'telefone', 'email', 'token', 'ativo', 'senha', 'foto'];
 
     protected $dates = ['created_at', 'updated_at'];
-
 }
