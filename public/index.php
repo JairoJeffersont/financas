@@ -1,11 +1,20 @@
 <?php
 
-use Financas\Controllers\UsuarioController;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Dotenv\Dotenv;
+
+// --- MINIFY START ---
+function minify_output($html) {
+    $html = preg_replace('/<!--(?!\[if).*?-->/s', '', $html);
+    $html = preg_replace('/\s+/', ' ', $html);
+    $html = preg_replace('/>\s+</', '><', $html);
+    return $html;
+}
+ob_start('minify_output');
+// --- MINIFY END ---
 
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
@@ -23,8 +32,10 @@ $capsule->addConnection([
 ]);
 
 $capsule->setAsGlobal();
-
 $capsule->bootEloquent();
 
-print_r(UsuarioController::listarUsuarios(1, 3));
+// Inclui o layout/base da aplicação
+include('../src/Views/base/baseLayout.php');
 
+// Envia saída minificada
+ob_end_flush();
