@@ -24,7 +24,6 @@ class UsuarioController {
         }
     }
 
-
     public static function buscarUsuario(string $valor, string $coluna = 'id'): array {
 
         $colunasPermitidas = ['id', 'email', 'nome'];
@@ -69,4 +68,5 @@ class UsuarioController {
             return ['status' => 'server_error', 'error_id' => $id];
         }
     }
+    
 }
