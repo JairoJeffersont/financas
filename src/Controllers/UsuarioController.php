@@ -87,7 +87,7 @@ class UsuarioController {
         }
     }
 
-    public static function atualizarUsuario(int $id, array $dados): array {
+    public static function atualizarUsuario(string $id, array $dados): array {
         try {
             $usuario = UsuarioModel::find($id);
 
